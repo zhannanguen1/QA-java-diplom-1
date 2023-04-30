@@ -105,7 +105,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>LATEST</version>
+            <version>6.11.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -120,24 +120,6 @@
             <artifactId>selenide-core</artifactId>
             <version>6.11.0</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>6.11.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>5.23.2</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
