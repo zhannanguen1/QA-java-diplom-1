@@ -1,11 +1,12 @@
 import org.junit.Test;
 import praktikum.IngredientType;
 import static org.junit.Assert.assertNotNull;
+import static praktikum.IngredientType.SAUCE;
 
 public class IngredientTypeTest {
     @Test
     public void testSauceIsNotNull() {
-        assertNotNull(IngredientType.valueOf("SAUСE"));
+        assertNotNull(IngredientType.valueOf("SAUCE"));
     }
 
     @Test

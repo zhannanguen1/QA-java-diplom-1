@@ -43,6 +43,6 @@ public class IngredientTest {
     @Test
     public void checkGetPrice(){
         Ingredient ingredient = new Ingredient(type, name, price);
-        assertEquals(price, ingredient.getPrice());
+        assertEquals(price, ingredient.getPrice(), 0.01);
     }
 }
