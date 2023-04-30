@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
 import praktikum.Burger;
@@ -53,5 +54,33 @@ public class BurgerTest {
         burger.addIngredient(ingredient1);
         burger.moveIngredient(0,1);
         Assert.assertEquals(ingredients, burger.ingredients);
+    }
+    @Test
+    public void getPriceTest(){
+        Mockito.when(bun.getPrice()).thenReturn((float) 100.11);
+        burger.setBuns(bun);
+        Mockito.when(ingredient.getPrice()).thenReturn((float) 45.18);
+        burger.addIngredient(ingredient);
+        Assert.assertEquals((float) 245.4, burger.getPrice(), 0.01);
+    }
+    @Test
+    public void getReceiptTest(){
+        Mockito.when(bun.getPrice()).thenReturn((float) 88.4);
+        Mockito.when(bun.getName()).thenReturn("СпейсХлеб");
+        burger.setBuns(bun);
+        Mockito.when(ingredient.getPrice()).thenReturn((float) 12.12);
+        Mockito.when(ingredient.getName()).thenReturn("Котлета");
+        Mockito.when(ingredient.getType()).thenReturn(IngredientType.SAUCE);
+        List<Ingredient> ingredients = new ArrayList<>();
+        ingredients.add(ingredient);
+        burger.addIngredient(ingredient);
+        StringBuilder receipt = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
+        for (Ingredient i : ingredients) {
+            receipt.append(String.format("= %s %s =%n", i.getType().toString().toLowerCase(),
+                    i.getName()));
+        }
+        receipt.append(String.format("(==== %s ====)%n", bun.getName()));
+        receipt.append(String.format("%nPrice: %f%n", (float) 188.92));
+        Assert.assertEquals(receipt.toString(), burger.getReceipt());
     }
 }
