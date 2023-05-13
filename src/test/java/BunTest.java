@@ -19,6 +19,12 @@ public class BunTest {
                 {"black bun", 100},
                 {"white bun", 200},
                 {"red bun", 300},
+                {null, 0},
+                {"reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1reallyLongNameOfBun1", 1},
+                {"", -1000},
+                {"brown bun", 1000000000},
+                {"cool bun", 0.0000000000000001f},
+                {"pink bun", -9.1119f}
         };
     }
 
